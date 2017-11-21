@@ -1,5 +1,3 @@
-import { waterfall } from "async";
-
 interface IColors {
   white: string;
   black: string;
@@ -15,6 +13,16 @@ interface ITypes {
   normal: string;
   flying: string;
   bug: string;
+  steel: string;
+  dragon: string;
+  fairy: string;
+  dark: string;
+  ghost: string;
+  ground: string;
+  rock: string;
+  psychic: string;
+  ice: string;
+  fighting: string;
 }
 
 export const colors: IColors = {
@@ -31,5 +39,15 @@ export const types: ITypes = {
   water: '#6890f0',
   flying: '#a890f0',
   bug: '#a8b820',
-  normal: '#a8a878'
+  normal: '#a8a878',
+  ground: '#e0c068',
+  fairy: '#ee99ac',
+  fighting: '#c03028',
+  psychic: '#f85888',
+  steel: '#b8b8d0',
+  ice: '#98d8d8',
+  ghost: '#705898',
+  rock: '#b8A038',
+  dragon: '#7038f8',
+  dark: '#705848'
 };

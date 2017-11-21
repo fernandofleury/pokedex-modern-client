@@ -35,6 +35,7 @@ const StyledItem = styled.div`
 
 const StyledImg = styled.img`
   display: block;
+  height: 96px;
   margin: auto;
   max-width: 96px;
   width: 100%;
@@ -46,6 +47,7 @@ const StyledTitle = styled.div`
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  text-transform: capitalize;
 `;
 
 class Pokemon extends React.PureComponent<IProps> {

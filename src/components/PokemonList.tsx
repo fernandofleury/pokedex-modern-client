@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { IPokemon } from '../types/pokemon';
 import Pokemon from './Pokemon';
 import PokemonPlaceholder from './PokemonPlaceholder';
+import Loader from './Loader';
 
 interface IResponse {
   pokemons: IPokemon[];
@@ -14,11 +15,13 @@ interface IResponse {
 interface IProps {
   data: {
     pokemons: IPokemon[];
+    loading: boolean;
   };
 }
 
 const StyledDiv = styled.div`
-  margin-top: 48px;
+  padding-top: 48px;
+  position: relative;
   text-align: center;
 `;
 
@@ -28,25 +31,23 @@ class PokemonList extends React.Component<IProps> {
   }
 
   public render() {
-    const { data: { pokemons } } = this.props;
-
-    if (!pokemons || !pokemons.length) {
-      return null;
-    }
+    const { data: { pokemons, loading } } = this.props;
 
     return (
       <StyledDiv>
-        {pokemons.map(pokemon => (
-          <LazyLoad
-            key={pokemon.id}
-            placeholder={<PokemonPlaceholder />}
-            height={140}
-            offset={200}
-            once
-          >
-            <Pokemon {...pokemon} />
-          </LazyLoad>
-        ))}
+        {loading && <Loader />}
+        {pokemons &&
+          pokemons.map(pokemon => (
+            <LazyLoad
+              key={pokemon.id}
+              placeholder={<PokemonPlaceholder />}
+              height={140}
+              offset={200}
+              once
+            >
+              <Pokemon {...pokemon} />
+            </LazyLoad>
+          ))}
       </StyledDiv>
     );
   }

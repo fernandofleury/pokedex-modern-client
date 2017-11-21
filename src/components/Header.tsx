@@ -14,6 +14,7 @@ const StyledHeader = styled.header`
   text-indent: 16px;
   top: 0;
   width: 100%;
+  z-index: 2;
 `;
 
 const Header = () => <StyledHeader>Pokedex</StyledHeader>;

@@ -24,7 +24,12 @@ const StyledItem = styled.div`
   flex-direction: column;
   height: 140px;
   margin: 8px;
+  transition: opacity 0.3s ease-in-out;
   width: 140px;
+
+  &:hover {
+    opacity: 0.7;
+  }
 
   @media screen and (max-width: 600px) {
     height: 120px;

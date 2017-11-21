@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
+import Header from './Header';
 import PokemonList from './PokemonList';
 
 // tslint:disable-next-line
@@ -9,29 +10,11 @@ injectGlobal`
   }
 `;
 
-const pokemons = [
-  {
-    name: 'Bulbasaur',
-    id: 1,
-    types: ['grass', 'poison'],
-    sprites: {
-      default:
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-      shiny: ''
-    }
-  },
-  {
-    name: 'Pikachu',
-    id: 20,
-    types: ['electric'],
-    sprites: {
-      default:
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
-      shiny: ''
-    }
-  }
-];
-
-const App = () => <PokemonList pokemons={pokemons} />;
+const App = () => (
+  <div>
+    <Header />
+    <PokemonList />
+  </div>
+);
 
 export default App;

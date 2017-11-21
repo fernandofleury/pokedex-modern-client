@@ -2,6 +2,7 @@ interface IColors {
   white: string;
   black: string;
   gray: string;
+  red: string;
 }
 
 interface ITypes {
@@ -28,7 +29,8 @@ interface ITypes {
 export const colors: IColors = {
   white: '#ffffff',
   black: '#000000',
-  gray: '#f3f3f3'
+  gray: '#f3f3f3',
+  red: '#dd0b2d'
 };
 
 export const types: ITypes = {

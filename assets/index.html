@@ -15,6 +15,33 @@
       margin: 0;
       padding: 0;
     }
+
+    @keyframes indeterminate {
+      from {
+        transform: translateX(-100%);
+      }
+
+      to {
+        transform: translateX(250%);
+      }
+    }
+
+    .loader-wrapper {
+      height: 4px;
+      left: 0;
+      overflow: hidden;
+      position: fixed;
+      top: 48px;
+      width: 100%;
+    }
+
+    .loader {
+      animation: 1s indeterminate infinite ease-in-out;
+      background-color: #2196f3;
+      height: 100%;
+      width: 40%;
+    }
+
     .header {
       color: white;
       background-color: #dd0b2d;
@@ -27,12 +54,16 @@
       text-indent: 16px;
       top: 0;
       width: 100%;
+      z-index: 2;
     }
   </style>
 </head>
 <body>
   <div id="root">
     <header class="header">Pokedex</header>
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
   </div>
 </body>
 </html>

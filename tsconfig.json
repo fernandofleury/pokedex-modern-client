@@ -2,16 +2,9 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
-    "module": "commonjs",
-    "target": "es5",
     "jsx": "react",
-    "lib": [
-      "es6",
-      "dom",
-      "esnext"
-    ]
-  },
-  "include": [
-    "./src/**/*"
-  ]
+    "moduleResolution": "node",
+    "target": "es2015",
+    "lib": ["es2016", "dom", "esnext"]
+  }
 }

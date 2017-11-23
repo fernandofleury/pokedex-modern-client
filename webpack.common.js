@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const DotEnvWebpackPlugin = require('dotenv-webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -18,12 +19,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
-        options: {
-          useBabel: true,
-        },
-        exclude: [
-          /node_modules/
-        ]
+        exclude: [/node_modules/],
       },
     ],
   },
@@ -31,6 +27,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'assets/index.html'),
+      excludeChunks: ['sw'],
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -45,12 +42,13 @@ module.exports = {
     }),
     new DotEnvWebpackPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
+      name: 'vendor',
       minChunks: Infinity,
     }),
+    new CopyWebpackPlugin([{ from: 'src/serviceWorker/sw.js', to: 'sw.js' }]),
   ],
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname, 'dist'),
+  },
 };

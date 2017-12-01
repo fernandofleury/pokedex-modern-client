@@ -11,7 +11,7 @@ const indeterminate = keyframes`
   }
 `;
 
-const StyledWrapper = styled.div`
+const Wrapper = styled.div`
   height: 4px;
   left: 0;
   overflow: hidden;
@@ -19,7 +19,7 @@ const StyledWrapper = styled.div`
   width: 100%;
 `;
 
-const AnimatedDiv = styled.div`
+const Animation = styled.div`
   animation: 1s ${indeterminate} infinite ease-in-out;
   background-color: #2196f3;
   height: 100%;
@@ -27,9 +27,9 @@ const AnimatedDiv = styled.div`
 `;
 
 const Loader = () => (
-  <StyledWrapper>
-    <AnimatedDiv />
-  </StyledWrapper>
+  <Wrapper>
+    <Animation />
+  </Wrapper>
 );
 
 export default Loader;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { colors } from '../styles/variables';
 
-const StyledItem = styled.div`
+const PokePlaceholder = styled.div`
   background: ${colors.gray};
   box-shadow: 0 1px 3px ${transparentize(0.88, colors.black)},
     0 1px 2px ${transparentize(0.76, colors.black)};
@@ -21,4 +21,4 @@ const StyledItem = styled.div`
   }
 `;
 
-export default StyledItem;
+export default PokePlaceholder;

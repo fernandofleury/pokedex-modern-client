@@ -4,7 +4,7 @@ import { transparentize } from 'polished';
 import { colors } from '../styles/variables';
 import generateBackground from '../styles/generateBackground';
 
-interface IProps {
+interface Props {
   name: string;
   id: number;
   types: string[];
@@ -14,7 +14,7 @@ interface IProps {
   };
 }
 
-const StyledItem = styled.div`
+const Element = styled.div`
   background: ${(props: { background?: string }) =>
     props.background || colors.gray};
   box-shadow: 0 1px 3px ${transparentize(0.88, colors.black)},
@@ -38,7 +38,7 @@ const StyledItem = styled.div`
   }
 `;
 
-const StyledImg = styled.img`
+const Image = styled.img`
   display: block;
   height: 96px;
   margin: auto;
@@ -46,7 +46,7 @@ const StyledImg = styled.img`
   width: 100%;
 `;
 
-const StyledTitle = styled.div`
+const Title = styled.div`
   background-color: ${transparentize(0.65, colors.black)};
   color: white;
   font-size: 14px;
@@ -55,17 +55,11 @@ const StyledTitle = styled.div`
   text-transform: capitalize;
 `;
 
-class Pokemon extends React.PureComponent<IProps> {
-  public render() {
-    const { name, types, sprites } = this.props;
+const PokeThumb = ({ name, types, sprites }: Props) => (
+  <Element background={generateBackground(types)}>
+    <Image src={sprites.default} />
+    <Title>{name}</Title>
+  </Element>
+);
 
-    return (
-      <StyledItem background={generateBackground(types)}>
-        <StyledImg src={sprites.default} />
-        <StyledTitle>{name}</StyledTitle>
-      </StyledItem>
-    );
-  }
-}
-
-export default Pokemon;
+export default PokeThumb;

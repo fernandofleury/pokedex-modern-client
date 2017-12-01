@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
 import Header from './Header';
-import PokemonList from './PokemonList';
+import PokeList from './PokeList';
 
 // tslint:disable-next-line
 injectGlobal`
@@ -13,7 +13,7 @@ injectGlobal`
 const App = () => (
   <div>
     <Header />
-    <PokemonList />
+    <PokeList />
   </div>
 );
 

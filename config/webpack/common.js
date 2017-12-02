@@ -19,14 +19,14 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
-        exclude: [/node_modules/],
+        exclude: [/node_modules/, /spec/],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'assets/index.html'),
+      template: path.resolve(__dirname, '../../assets/index.html'),
       excludeChunks: ['sw'],
       minify: {
         removeAttributeQuotes: true,
@@ -49,6 +49,6 @@ module.exports = {
   ],
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../../dist'),
   },
 };

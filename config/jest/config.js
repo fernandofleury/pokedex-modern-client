@@ -8,5 +8,9 @@ module.exports = {
   "testRegex": "/__tests__/.*|(\\.|/)spec\\.(jsx?|tsx?)$",
   "coveragePathIgnorePatterns": ["/node_modules/", "/config/"],
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
-  "setupFiles": ["./config/jest/raf-shim.js", "./config/jest/setup-enzyme.js"]
+  "setupFiles": [
+    "./config/jest/raf-shim.js",
+    "./config/jest/setup-enzyme.js",
+    "jest-localstorage-mock"
+  ]
 }

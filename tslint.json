@@ -9,6 +9,6 @@
     "interface-name": [true, "never-prefix"],
     "member-ordering": false,
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+    "ordered-imports": false
   }
 }

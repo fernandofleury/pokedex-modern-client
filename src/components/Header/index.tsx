@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { colors } from '../styles/variables';
+import { colors } from '../../styles/variables';
 
 const StyledHeader = styled.header`
   color: ${colors.white};

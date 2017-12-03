@@ -1,49 +1,35 @@
 import { ApolloQueryResult } from 'apollo-client';
 import gql from 'graphql-tag';
-import client from '../client';
-import { Pokemon } from '../types/pokemon';
-import * as storage from '../utils/storage';
-
-const ALL_POKEMONS = 'all_pokemons';
-
-const query = `
-{
-  pokemons(start: 1, end: 802) {
-    name
-    id
-    types
-    sprites {
-      default
-      shiny
-    }
-  }
-}`;
+import client from '../../client';
+import { Pokemon } from '../../types/pokemon';
+import * as storage from '../../utils/storage';
+import * as constants from './constants';
 
 interface Response {
   pokemons: Pokemon[];
 }
 
-const parseResponse = (response: ApolloQueryResult<Response>) => {
+export const parseResponse = (response: ApolloQueryResult<Response>) => {
   return response.data.pokemons;
 };
 
-const storeResponse = (response: Pokemon[]) => {
+export const storeResponse = (response: Pokemon[]) => {
   if (response.length) {
-    storage.add(ALL_POKEMONS, response);
+    storage.add(constants.CACHE_KEY, response);
   }
 
   return response;
 };
 
-const handleError = () => [];
+export const handleError = () => [];
 
 const getPokemons = (): Promise<Pokemon[]> => {
-  if (storage.has(ALL_POKEMONS)) {
-    return Promise.resolve(storage.get(ALL_POKEMONS));
+  if (storage.has(constants.CACHE_KEY)) {
+    return Promise.resolve(storage.get(constants.CACHE_KEY));
   }
 
   return client
-    .query({ query: gql(query) })
+    .query({ query: gql(constants.QUERY) })
     .then(parseResponse)
     .then(storeResponse)
     .catch(handleError);

@@ -10,6 +10,7 @@ module.exports = {
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
   "setupFiles": [
     "./config/jest/raf-shim.js",
+    "./config/jest/fetch-shim.js",
     "./config/jest/setup-enzyme.js",
     "jest-localstorage-mock"
   ]

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { injectGlobal } from 'styled-components';
-import Header from './Header';
-import PokeList from './PokeList';
+import Header from '../Header';
+import PokeList from '../PokeList';
 
 // tslint:disable-next-line
 injectGlobal`

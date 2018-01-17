@@ -1,11 +1,11 @@
-interface IColors {
+interface Colors {
   white: string;
   black: string;
   gray: string;
   red: string;
 }
 
-interface ITypes {
+interface Types {
   grass: string;
   poison: string;
   electric: string;
@@ -26,14 +26,14 @@ interface ITypes {
   fighting: string;
 }
 
-export const colors: IColors = {
+export const colors: Colors = {
   white: '#ffffff',
   black: '#000000',
   gray: '#f3f3f3',
   red: '#dd0b2d'
 };
 
-export const types: ITypes = {
+export const types: Types = {
   grass: '#78c850',
   poison: '#a040a0',
   electric: '#f8d030',

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import LazyLoad, { forceCheck } from 'react-lazyload';
-import gql from 'graphql-tag';
 import styled from 'styled-components';
-import client from '../client';
 import { Pokemon } from '../types/pokemon';
 import PokeThumb from './PokeThumb';
 import PokePlaceholder from './PokePlaceholder';

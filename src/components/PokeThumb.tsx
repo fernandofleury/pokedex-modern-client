@@ -19,7 +19,6 @@ const Element = styled.div`
     props.background || colors.gray};
   box-shadow: 0 1px 3px ${transparentize(0.88, colors.black)},
     0 1px 2px ${transparentize(0.76, colors.black)};
-  cursor: pointer;
   display: inline-flex;
   flex-direction: column;
   height: 140px;
